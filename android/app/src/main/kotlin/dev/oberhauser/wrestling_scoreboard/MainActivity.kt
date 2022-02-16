@@ -1,4 +1,4 @@
-package dev.oberhauser.wrestling_scoreboard
+package dev.oberhauser.flutter_audioplayers_showcase
 
 import io.flutter.embedding.android.FlutterActivity
 

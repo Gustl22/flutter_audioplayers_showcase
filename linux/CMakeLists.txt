@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project(runner LANGUAGES CXX)
 
-set(BINARY_NAME "wrestling_scoreboard")
-set(APPLICATION_ID "dev.oberhauser.wrestling_scoreboard")
+set(BINARY_NAME "flutter_audioplayers_showcase")
+set(APPLICATION_ID "dev.oberhauser.flutter_audioplayers_showcase")
 
 cmake_policy(SET CMP0063 NEW)
 

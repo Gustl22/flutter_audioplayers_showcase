@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:wrestling_scoreboard/ui/appNavigation.dart';
-import 'package:wrestling_scoreboard/ui/settings/preferences.dart';
+import 'package:flutter_audioplayers_showcase/ui/appNavigation.dart';
+import 'package:flutter_audioplayers_showcase/ui/settings/preferences.dart';
 
 void main() async {
-  await dotenv.load(fileName: '.env');
   runApp(const WrestlingScoreboardApp());
 }
 
@@ -49,7 +47,7 @@ class WrestlingScoreboardAppState extends State<WrestlingScoreboardApp> {
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     return MaterialApp(
-      title: AppLocalizations.of(context)?.appName ?? 'Wrestling Scoreboard',
+      title: AppLocalizations.of(context)?.appName ?? 'Showcase Flutter Audioplayers',
       theme: ThemeData(
         brightness: Brightness.light,
         visualDensity: VisualDensity.adaptivePlatformDensity,

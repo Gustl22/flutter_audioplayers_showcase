@@ -1,6 +1,6 @@
 {
-    "name": "wrestling_scoreboard",
-    "short_name": "wrestling_scoreboard",
+    "name": "flutter_audioplayers_showcase",
+    "short_name": "flutter_audioplayers_showcase",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

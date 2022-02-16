@@ -1,5 +1,3 @@
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-
 const apiUrl = 'API_URL';
 const webSocketUrl = 'WEB_SOCKET_URL';
 const appEnvironment = 'APP_ENVIRONMENT';
@@ -12,7 +10,6 @@ const bellSoundPath = 'BELL_SOUND_PATH';
 /// - default value
 String env(String variable, {String? fallBack}) {
   String? fromEnv = _env(variable);
-  if (fromEnv?.isEmpty ?? true) fromEnv = dotenv.env[variable];
   if (fromEnv?.isEmpty ?? true) fromEnv = fallBack;
   if (fromEnv?.isEmpty ?? true) fromEnv = _defaultValue(variable);
   return fromEnv!;

@@ -1,9 +1,9 @@
-import 'package:wrestling_scoreboard/ui/settings/preferences.dart';
-import 'package:wrestling_scoreboard/util/environment.dart';
+import 'package:flutter_audioplayers_showcase/ui/settings/preferences.dart';
+import 'package:flutter_audioplayers_showcase/util/environment.dart';
 
 import 'stub_audio_player.dart'
     if (dart.library.js) 'web_audio_player.dart'
-    if (dart.library.io) 'desktop_audio_player.dart';
+    if (dart.library.io) 'default_audio_player.dart';
 
 class HornSound {
   static HornSound? _singleton;

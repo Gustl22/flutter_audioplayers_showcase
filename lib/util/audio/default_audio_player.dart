@@ -2,11 +2,11 @@ import 'package:audioplayers/audioplayers.dart';
 
 import 'audio.dart';
 
-class MobileAudioPlayer implements Playable {
+class DefaultAudioPlayer implements Playable {
   AudioCache player = AudioCache(prefix: '');
   String url = '';
 
-  MobileAudioPlayer();
+  DefaultAudioPlayer();
 
   @override
   Future<void> play() async {
@@ -24,4 +24,4 @@ class MobileAudioPlayer implements Playable {
   }
 }
 
-Playable getAudioPlayer() => MobileAudioPlayer();
+Playable getAudioPlayer() => DefaultAudioPlayer();
