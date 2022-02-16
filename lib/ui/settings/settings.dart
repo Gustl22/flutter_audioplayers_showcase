@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_audioplayers_showcase/ui/components/ok_dialog.dart';
 import 'package:flutter_audioplayers_showcase/util/asset.dart';
 import 'package:flutter_audioplayers_showcase/util/audio/audio.dart';
 import 'package:flutter_audioplayers_showcase/util/environment.dart';
@@ -52,23 +51,6 @@ class CustomSettingsScreenState extends State<CustomSettingsScreen> {
   }
 }
 
-class TextInputDialog extends StatelessWidget {
-  final String? initialValue;
-
-  const TextInputDialog({required this.initialValue, Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    String? result;
-    return OkDialog(
-        child: TextFormField(
-          initialValue: initialValue,
-          onChanged: (value) => result = value,
-        ),
-        getResult: () => result);
-  }
-}
-
 class RadioDialog extends StatefulWidget {
   final List<MapEntry<String?, String>> values;
   final String? initialValue;
@@ -100,24 +82,25 @@ class _RadioDialogState extends State<RadioDialog> {
       content: SizedBox(
         width: 300,
         child: ListView.builder(
-            key: Key(result.toString()),
-            shrinkWrap: true,
-            itemCount: widget.values.length,
-            itemBuilder: (context, index) {
-              final entry = widget.values[index];
-              return RadioListTile<String?>(
-                value: entry.key,
-                groupValue: result,
-                onChanged: (v) {
-                  if (widget.onChanged != null) widget.onChanged!(v);
-                  setState(() {
-                    result = v;
-                  });
-                },
-                title: Text(entry.value),
-              );
-            },
-          ),
-      ));
+          key: Key(result.toString()),
+          shrinkWrap: true,
+          itemCount: widget.values.length,
+          itemBuilder: (context, index) {
+            final entry = widget.values[index];
+            return RadioListTile<String?>(
+              value: entry.key,
+              groupValue: result,
+              onChanged: (v) {
+                if (widget.onChanged != null) widget.onChanged!(v);
+                setState(() {
+                  result = v;
+                });
+              },
+              title: Text(entry.value),
+            );
+          },
+        ),
+      ),
+    );
   }
 }
