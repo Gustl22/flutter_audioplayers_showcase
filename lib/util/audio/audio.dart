@@ -6,18 +6,15 @@ import 'stub_audio_player.dart'
     if (dart.library.io) 'default_audio_player.dart';
 
 class HornSound {
-  static HornSound? _singleton;
   late Playable audioPlayer;
   late Future<void> isSourceSet;
 
   factory HornSound() {
-    _singleton ??= HornSound._fromPreference();
-    return _singleton!;
+    return HornSound._fromPreference();
   }
   
   factory HornSound.source(String source) {
-    _singleton ??= HornSound._fromSource(source);
-    return _singleton!;
+    return HornSound._fromSource(source);
   }
 
   Future<void> play() async {
@@ -28,7 +25,6 @@ class HornSound {
   Future<void> dispose() async {
     await isSourceSet;
     await audioPlayer.dispose();
-    _singleton = null;
   }
 
   HornSound._fromSource(String source) {

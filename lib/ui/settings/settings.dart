@@ -40,8 +40,8 @@ class CustomSettingsScreenState extends State<CustomSettingsScreen> {
             initialValue: _bellSoundPath,
             onChanged: (value) async {
               if (value != null) {
-                await HornSound.source(value).play();
-                await HornSound().dispose();
+                final sound = HornSound.source(value);
+                await sound.play();
               }
             },
           );
