@@ -3,14 +3,14 @@ import 'package:audioplayers/audioplayers.dart';
 import 'audio.dart';
 
 class DefaultAudioPlayer implements Playable {
-  AudioCache player = AudioCache(prefix: '');
+  AudioCache cache = AudioCache(prefix: '');
   String url = '';
 
   DefaultAudioPlayer();
 
   @override
   Future<void> play() async {
-    player.play(url);
+    await cache.play(url);
   }
 
   @override
@@ -19,8 +19,8 @@ class DefaultAudioPlayer implements Playable {
   }
 
   @override
-  void dispose() {
-    player.clearAll();
+  Future<void> dispose() async {
+    await cache.clearAll();
   }
 }
 

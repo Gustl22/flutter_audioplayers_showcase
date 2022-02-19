@@ -10,7 +10,7 @@ class WebAudioPlayer implements Playable {
 
   @override
   Future<void> play() async {
-    player.play(url);
+    await player.play(url);
   }
 
   @override
@@ -19,8 +19,8 @@ class WebAudioPlayer implements Playable {
   }
 
   @override
-  void dispose() {
-    player.dispose();
+  Future<void> dispose() async {
+    await player.dispose();
   }
 }
 

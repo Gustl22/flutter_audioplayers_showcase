@@ -27,7 +27,7 @@ class HornSound {
 
   Future<void> dispose() async {
     await isSourceSet;
-    audioPlayer.dispose();
+    await audioPlayer.dispose();
     _singleton = null;
   }
 
@@ -51,5 +51,5 @@ abstract class Playable {
 
   Future<void> setSource(String url);
 
-  void dispose();
+  Future<void> dispose();
 }

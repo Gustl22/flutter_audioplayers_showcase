@@ -38,10 +38,10 @@ class CustomSettingsScreenState extends State<CustomSettingsScreen> {
           return RadioDialog(
             values: bellSoundValues,
             initialValue: _bellSoundPath,
-            onChanged: (value) {
+            onChanged: (value) async {
               if (value != null) {
-                HornSound.source(value).play();
-                HornSound().dispose();
+                await HornSound.source(value).play();
+                await HornSound().dispose();
               }
             },
           );
